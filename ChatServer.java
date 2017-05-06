@@ -1,62 +1,68 @@
-//“üo—ÍƒXƒgƒŠ[ƒ€‚ğg‚¤‚Ì‚ÅCjava.io.* ‚ğ import
+
+//å…¥å‡ºåŠ›ã‚¹ãƒˆãƒªãƒ¼ãƒ ã‚’ä½¿ã†ã®ã§ï¼Œjava.io.* ã‚’ import
 import java.io.*;
-// ƒ\ƒPƒbƒg‚ğg‚¤‚Ì‚Å java.net.* ‚ğ import 
+// ã‚½ã‚±ãƒƒãƒˆã‚’ä½¿ã†ã®ã§ java.net.* ã‚’ import 
 import java.net.*;
 
-class ChatServer{
-	   // ŠeƒNƒ‰ƒCƒAƒ“ƒg‚ğ‹L‰¯‚·‚é”z—ñD
-	 Worker workers[];
-	   // ƒRƒ“ƒXƒgƒ‰ƒNƒ^
-	 public ChatServer(){
-	     // ƒ|[ƒg”Ô†‚ğ 4444‚É‚·‚éD“¯‚¶ƒ}ƒVƒ“‚Å“¯‚¶ƒ|[ƒg‚ğg‚¤‚±‚Æ‚Í
-	     // ‚Å‚«‚È‚¢‚Ì‚ÅCƒ†[ƒU‚²‚Æ‚É•Ï‚¦‚é‚±‚Æ(1023ˆÈ‰º‚Íg‚¦‚È‚¢)
-	   int port=1707;
-	     // ”z—ñ‚ğì¬
-	   workers=new Worker[100];
-	   Socket sock;
-	   try{
-	       // ServerSocket‚ğì¬
-	     ServerSocket servsock=new ServerSocket(port);
-	       // –³ŒÀƒ‹[ƒvCbreak‚ª—ˆ‚é‚Ü‚Å
-	     while(true){
-	         // ƒNƒ‰ƒCƒAƒ“ƒg‚©‚ç‚ÌƒAƒNƒZƒX‚ğ‚¤‚¯‚Â‚¯‚½D
-	       sock=servsock.accept();
-	       int i;
-	         // ”z—ñ‚·‚×‚Ä‚É‚Â‚¢‚Ä
-	       for(i=0;i< workers.length;i++){
-	           // ‹ó‚¢‚Ä‚¢‚é—v‘f‚ª‚ ‚Á‚½‚çC
-	         if(workers[i]==null){
-	             // Worker‚ğì‚Á‚Ä
-	           workers[i]=new Worker(i,sock,this);
-	             // ‘Î‰‚·‚éƒXƒŒƒbƒh‚ğ‘–‚ç‚¹‚é
-	           new Thread(workers[i]).start();
-	           break;
-	         }
-	       }
-	       if(i==workers.length){
-	         System.out.println("Can't serve");
-	       }
-	     }
-	   } catch(IOException ioe){
-	     System.out.println(ioe);
-	   }
-	 }
-	 public static void main(String args[]) throws IOException{
-	     // ƒCƒ“ƒXƒ^ƒ“ƒX‚ğ1‚Â‚¾‚¯ì‚éD
-	   new ChatServer();
-	 }
-	   // synchronized ‚ÍC“¯Šú‚Ì‚½‚ß‚ÌƒL[ƒ[ƒhD‚Â‚¯‚È‚­‚Ä‚à“®‚­‚±‚Æ‚Í‚ ‚éD
-	 public synchronized void sendAll(String s){
-	   int i;
-	   for(i=0;i< workers.length;i++){
-	       // workers[i]‚ª‹ó‚Å‚È‚¯‚ê‚Î•¶š—ñ‚ğ‘—‚é
-	     if(workers[i]!=null)
-	       workers[i].send(s);
-	   }
-	 }
-	   // ƒNƒ‰ƒCƒAƒ“ƒg n ‚ª”²‚¯‚½‚±‚Æ‹L˜^‚µC‘¼‚Ìƒ†[ƒU‚É‘—‚éD
-	 public void remove(int n){
-	   workers[n]=null;
-	   sendAll("quiting ["+n+"]");
-	 }
+class ChatServer {
+	// å„ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã‚’è¨˜æ†¶ã™ã‚‹é…åˆ—ï¼
+	Worker workers[];
+
+	// ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+	public ChatServer() {
+		// ãƒãƒ¼ãƒˆç•ªå·ã‚’ 4444ã«ã™ã‚‹ï¼åŒã˜ãƒã‚·ãƒ³ã§åŒã˜ãƒãƒ¼ãƒˆã‚’ä½¿ã†ã“ã¨ã¯
+		// ã§ããªã„ã®ã§ï¼Œãƒ¦ãƒ¼ã‚¶ã”ã¨ã«å¤‰ãˆã‚‹ã“ã¨(1023ä»¥ä¸‹ã¯ä½¿ãˆãªã„)
+		int port = 1707;
+		// é…åˆ—ã‚’ä½œæˆ
+		workers = new Worker[20];
+		Socket sock;
+		try {
+			// ServerSocketã‚’ä½œæˆ
+			ServerSocket servsock = new ServerSocket(port);
+			// ç„¡é™ãƒ«ãƒ¼ãƒ—ï¼ŒbreakãŒæ¥ã‚‹ã¾ã§
+			while (true) {
+				// ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã‹ã‚‰ã®ã‚¢ã‚¯ã‚»ã‚¹ã‚’ã†ã‘ã¤ã‘ãŸï¼
+				sock = servsock.accept();
+				int i;
+				// é…åˆ—ã™ã¹ã¦ã«ã¤ã„ã¦
+				for (i = 0; i < workers.length; i++) {
+					// ç©ºã„ã¦ã„ã‚‹è¦ç´ ãŒã‚ã£ãŸã‚‰ï¼Œ
+					if (workers[i] == null) {
+						// Workerã‚’ä½œã£ã¦
+						workers[i] = new Worker(i, sock, this);
+						// å¯¾å¿œã™ã‚‹ã‚¹ãƒ¬ãƒƒãƒ‰ã‚’èµ°ã‚‰ã›ã‚‹
+						new Thread(workers[i]).start();
+						break;
+					}
+				}
+				if (i == workers.length) {
+					System.out.println("Can't serve");
+				}
+			}
+		} catch (IOException ioe) {
+			System.out.println(ioe);
+		}
+	}
+
+	public static void main(String args[]) throws IOException {
+		// ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’1ã¤ã ã‘ä½œã‚‹ï¼
+		new ChatServer();
+		public static File file = new File("Lolita_log.txt");
+	}
+
+	// synchronized ã¯ï¼ŒåŒæœŸã®ãŸã‚ã®ã‚­ãƒ¼ãƒ¯ãƒ¼ãƒ‰ï¼ã¤ã‘ãªãã¦ã‚‚å‹•ãã“ã¨ã¯ã‚ã‚‹ï¼
+	public synchronized void sendAll(String s) {
+		int i;
+		for (i = 0; i < workers.length; i++) {
+			// workers[i]ãŒç©ºã§ãªã‘ã‚Œã°æ–‡å­—åˆ—ã‚’é€ã‚‹
+			if (workers[i] != null)
+				workers[i].send(s);
+		}
+	}
+
+	// ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆ n ãŒæŠœã‘ãŸã“ã¨è¨˜éŒ²ã—ï¼Œä»–ã®ãƒ¦ãƒ¼ã‚¶ã«é€ã‚‹ï¼
+	public void remove(int n) {
+		workers[n] = null;
+		sendAll("quiting [" + n + "]");
+	}
 }

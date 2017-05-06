@@ -1,30 +1,36 @@
-// “üo—ÍƒXƒgƒŠ[ƒ€‚ğg‚¤‚Ì‚ÅCjava.io.* ‚ğ import
-import java.io.*;
-// ƒ\ƒPƒbƒg‚ğg‚¤‚Ì‚Å java.net.* ‚ğ import 
-import java.net.*;
 
-// ˆêl‚ÌƒNƒ‰ƒCƒAƒ“ƒg‚Æ‚Ì’ÊM‚ğ’S“–‚·‚éƒXƒŒƒbƒh
-// ƒXƒŒƒbƒhã‚Å‘–‚ç‚¹‚é‚½‚ß Runnable ƒCƒ“ƒ^ƒtƒF[ƒX‚ğÀ‘•
+// å…¥å‡ºåŠ›ã‚¹ãƒˆãƒªãƒ¼ãƒ ã‚’ä½¿ã†ã®ã§ï¼Œjava.io.* ã‚’ import
+import java.io.*;
+// ã‚½ã‚±ãƒƒãƒˆã‚’ä½¿ã†ã®ã§ java.net.* ã‚’ import 
+import java.net.*;
+import java.util.ArrayList;
+import java.io.file;
+import java.io.FileWriter;
+import java.io.IOException;
+
+// ä¸€äººã®ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã¨ã®é€šä¿¡ã‚’æ‹…å½“ã™ã‚‹ã‚¹ãƒ¬ãƒƒãƒ‰
+// ã‚¹ãƒ¬ãƒƒãƒ‰ä¸Šã§èµ°ã‚‰ã›ã‚‹ãŸã‚ Runnable ã‚¤ãƒ³ã‚¿ãƒ•ã‚§ãƒ¼ã‚¹ã‚’å®Ÿè£…
 class Worker implements Runnable {
-	// ’ÊM‚Ì‚½‚ß‚Ìƒ\ƒPƒbƒg
+	// é€šä¿¡ã®ãŸã‚ã®ã‚½ã‚±ãƒƒãƒˆ
 	Socket sock;
-	// ‚»‚Ìƒ\ƒPƒbƒg‚©‚çì¬‚µ‚½“üo—Í—p‚ÌƒXƒgƒŠ[ƒ€
+	// ãã®ã‚½ã‚±ãƒƒãƒˆã‹ã‚‰ä½œæˆã—ãŸå…¥å‡ºåŠ›ç”¨ã®ã‚¹ãƒˆãƒªãƒ¼ãƒ 
 	PrintWriter out;
 	BufferedReader in;
-	// ƒT[ƒo–{‘Ì‚Ìƒƒ\ƒbƒh‚ğŒÄ‚Ño‚·‚½‚ß‚É‹L‰¯
+	// ã‚µãƒ¼ãƒæœ¬ä½“ã®ãƒ¡ã‚½ãƒƒãƒ‰ã‚’å‘¼ã³å‡ºã™ãŸã‚ã«è¨˜æ†¶
 	ChatServer chatServer;
-	// ’S“–‚·‚éƒNƒ‰ƒCƒAƒ“ƒg‚Ì”Ô†
+	// æ‹…å½“ã™ã‚‹ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã®ç•ªå·
 	int n;
-	// ƒNƒ‰ƒCƒAƒ“ƒg‚Ì‘”
-	static int N=7;
-	// ƒNƒ‰ƒCƒAƒ“ƒg‚ª¶‚«‚Ä‚¢‚é‚©‚Ì”»•Êflag
-	static boolean AliveFlag[]=new boolean[N];
-	static String DeadOrAlive="FFFFFFF";
-	// ƒNƒ‰ƒCƒAƒ“ƒg‚ÌƒƒOƒCƒ“ŠÔ
-	static long Logintime[]=new long[N];
-	static long lifetime=20000;
+	// ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã®ç·æ•°
+	static int N = 7;
+	// ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆãŒç”Ÿãã¦ã„ã‚‹ã‹ã®åˆ¤åˆ¥flag
+	static boolean AliveFlag[] = new boolean[N];
+	static String DeadOrAlive = "FFFFFFF";
+	// ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã®ãƒ­ã‚°ã‚¤ãƒ³æ™‚é–“
+	static long Logintime[] = new long[N];
+	static long lifetime = 20000;
+	static ArrayList<Receiveddata> messageList=new ArrayList<Receiveddata>();
 
-	// ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	// ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	public Worker(int n, Socket s, ChatServer cs) {
 		this.n = n;
 		chatServer = cs;
@@ -33,71 +39,140 @@ class Worker implements Runnable {
 		in = null;
 	}
 
-	// ‘Î‰‚·‚éƒXƒŒƒbƒh‚ª start ‚µ‚½‚ÉŒÄ‚Î‚ê‚éD
+	// å¯¾å¿œã™ã‚‹ã‚¹ãƒ¬ãƒƒãƒ‰ãŒ start ã—ãŸæ™‚ã«å‘¼ã°ã‚Œã‚‹ï¼
 	public void run() {
 		System.out.println("Thread running:" + Thread.currentThread());
-		// 0~6‚Ì”z—ñindex‚É‘Î‰
-		String usernumber=null;
-		// –{•¶‚ğ—¬‚µ‚Ş
-		String message = "";
-		String s=null;
-		// s”‚ÌƒJƒEƒ“ƒg
-		int count=0;
+		// 0~6ã®é…åˆ—indexã«å¯¾å¿œ
+		String usernumber = null;
+		// è¡Œã®ä¸€æ™‚çš„ãªç¢ºä¿
+		String line = "";
+		// æœ¬æ–‡ã®ä¸€æ™‚çš„ãªç¢ºä¿
+		String tempMessage = "";
+		// é€ä¿¡æ™‚ã«æœªèª­ã®åˆ†ã‚’æ›¸ãä¸¦ã¹ã‚‹
+		String allMessage="";
+		// è¡Œæ•°ã®ã‚«ã‚¦ãƒ³ãƒˆ
+		int count = 0;
 		try {
-			// ƒ\ƒPƒbƒg‚©‚çƒXƒgƒŠ[ƒ€‚Ìì¬
+			// ã‚½ã‚±ãƒƒãƒˆã‹ã‚‰ã‚¹ãƒˆãƒªãƒ¼ãƒ ã®ä½œæˆ
 			out = new PrintWriter(sock.getOutputStream(), true);
 			in = new BufferedReader(new InputStreamReader(sock.getInputStream()));
-			usernumber=in.readLine();
-			s=in.readLine();
-			 // ƒ\ƒPƒbƒg‚©‚ç‚Ì“ü—Í‚ª‚ ‚Á‚½‚çC
-			while(s!=null&&!(s.equals(""))){
-				System.out.println(s);
-		    	message+=s;
-		    	s=null;
-		        count++;
-		        s=in.readLine();
-		      }
-		   // ƒNƒ‰ƒCƒAƒ“ƒg‘S‘Ì‚É‘—‚éD
-		      if(count==0){
-		    	
-		    	  Lifetime(N,Integer.parseInt(usernumber),Logintime,AliveFlag,lifetime);
-		    	  AliveFlag[Integer.parseInt(usernumber)]=true;
-		    	  DeadOrAlive=shorten(AliveFlag,DeadOrAlive);
-		    	  chatServer.sendAll(DeadOrAlive);
-		    	  System.out.println(DeadOrAlive);
-		      }
-		      else {
-		    	  DeadOrAlive=shorten(AliveFlag,DeadOrAlive);
-		    	  chatServer.sendAll(DeadOrAlive+usernumber+"roli"+message);
-		      }
-		        // ©•ª©g‚ğƒe[ƒuƒ‹‚©‚çæ‚èœ‚­
-		      chatServer.remove(n);
-		        // ƒ\ƒPƒbƒg‚ğ•Â‚¶‚é
-		      sock.close();
-		    }
-		    catch(IOException ioe){
-		      System.out.println(ioe);
-		      chatServer.remove(n);
-		    }
-		  }
-		
-	// ‘Î‰‚·‚éƒ\ƒPƒbƒg‚É•¶š—ñ‚ğ‘—‚é
+			usernumber = in.readLine();
+			line = in.readLine();
+			// ã‚½ã‚±ãƒƒãƒˆã‹ã‚‰ã®å…¥åŠ›ãŒã‚ã£ãŸã‚‰ï¼Œ
+			while (line != null && !(line.equals(""))) {
+				System.out.println(line);
+				tempMessage+=line;
+				line = null;
+				count++;
+				line = in.readLine();
+			}
+			
+			// messageListã®ç”Ÿæˆ
+			// å¼•æ•°ã¯å·¦ã‹ã‚‰ã€èª°ãŒé€ã£ã¦ããŸã‹ã€æœ¬æ–‡å…¨ä½“ã€ã™ã§ã«é€ã£ãŸã‹ã©ã†ã‹ï¼ˆé€ä¿¡æ¸ˆã¿ã®å ´åˆã¯trueï¼‰ã€ã„ã¤ã®æŠ•ç¨¿ã‹
+			messageList.add(new Receiveddata(usernumber,tempMessage,new isSent[N],System.currentTimeMillis()));
+			
+			// messegeListã®ãƒ‡ãƒ¼ã‚¿æ•°100ä»¶è¶…ãˆãŸã‚‰å¤ã„ã‚‚ã®ã‹ã‚‰å‰Šé™¤
+			if(messageList.size()>100){
+				int i=messageList.size()-100;
+				for(int j=0;j<i;j++){
+					messageList.remove(j);
+				}
+			}
+			
+			// logã®ãƒ†ã‚­ã‚¹ãƒˆã«è¿½åŠ ã™ã‚‹
+						try{
+						      if (checkBeforeWritefile(ChatServer.file)){
+						        FileWriter filewriter = new FileWriter(ChatServer.file, true);
+						        
+						        filewriter.write(messageList.get(messageList.get(messageList.size()).receivedTime+" "+messageList.size()).usernumber+" "+messageList.get(messageList.size()).tempMessage+"/n");
+
+						        filewriter.close();
+						      }else{
+						        System.out.println("Lolita_log.textã«æ›¸ãè¾¼ã‚ã¾ã›ã‚“");
+						      }
+						    }catch(IOException e){
+						      System.out.println(e);
+						    }
+						
+			
+			// allMessegeã«æœªèª­åˆ†ã‚’æ ¼ç´
+			for(int i=0;i<messageList.size();i++){
+				if(!messageList.get(i).isSent[int(usernumber)]){
+					allMessege+=messageList.get(i).usernumber;
+					allMessege+="roli";
+					allMessege+=messageList.get(i).tempMassage;
+					allMessege+="roli";
+					messageList.get(i).isSent[int(usernumber)]=true;
+				};
+			}
+			
+			// é€ä¿¡ã—ã¦ããŸã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã«é€ã‚‹
+			// ã‚‚ã—è‡ªå‹•é€ä¿¡ã®ä¿¡å·ãªã‚‰ã€
+			if (count == 0) {
+				Lifetime(N, Integer.parseInt(usernumber), Logintime, AliveFlag, lifetime);
+				AliveFlag[Integer.parseInt(usernumber)] = true;
+				DeadOrAlive = shorten(AliveFlag, DeadOrAlive);
+			// æ‰‹å‹•é€ä¿¡ï¼ˆæœ¬æ–‡ä»˜ãï¼‰ãªã‚‰ã€
+			} else {
+				DeadOrAlive = shorten(AliveFlag, DeadOrAlive);
+			}
+			chatServer.sendAll(DeadOrAlive+allMessage);
+			
+			// è‡ªåˆ†è‡ªèº«ã‚’ãƒ†ãƒ¼ãƒ–ãƒ«ã‹ã‚‰å–ã‚Šé™¤ã
+			chatServer.remove(n);
+			// ã‚½ã‚±ãƒƒãƒˆã‚’é–‰ã˜ã‚‹
+			sock.close();
+		} catch (IOException ioe) {
+			System.out.println(ioe);
+			chatServer.remove(n);
+		}
+	}
+
+	// å¯¾å¿œã™ã‚‹ã‚½ã‚±ãƒƒãƒˆã«æ–‡å­—åˆ—ã‚’é€ã‚‹
 	public void send(String s) {
 		out.println(s);
 	}
-	private String shorten(boolean[] AliveFlag,String DeadOrAlive){
-		String s="";
-		for(int i=0;i<AliveFlag.length;i++){
-			if(AliveFlag[i])s+="T";
-			else s+="F";
+
+	private String shorten(boolean[] AliveFlag, String DeadOrAlive) {
+		String s = "";
+		for (int i = 0; i < AliveFlag.length; i++) {
+			if (AliveFlag[i])
+				s += "T";
+			else
+				s += "F";
 		}
 		return s;
 	}
-	private void Lifetime(int N,int usernumber,long Logintime[],boolean[] AliveFlag,long lifetime){
-		for(int i=0;i<N;i++){
-			Logintime[usernumber]=System.currentTimeMillis();
-			if(System.currentTimeMillis()-Logintime[i]>lifetime) AliveFlag[i]=false;
+
+	private void Lifetime(int N, int usernumber, long Logintime[], boolean[] AliveFlag, long lifetime) {
+		for (int i = 0; i < N; i++) {
+			Logintime[usernumber] = System.currentTimeMillis();
+			if (System.currentTimeMillis() - Logintime[i] > lifetime)
+				AliveFlag[i] = false;
 		}
 		return;
 	}
 }
+
+class Receiveddata{
+	String usernumber;
+	String tempMassage;
+	boolean isSent[];
+	long receivedTime;
+	public Receiveddata(String user_number,String temp_Massage,boolean is_Sent[],long received_Time){
+		user_number=usernumber;
+		temp_Massage=tempMassage;
+		is_Sent=isSent;
+		received_Time=receivedTime;
+	}
+}
+
+private static boolean checkBeforeWritefile(File file){
+    if (file.exists()){
+      if (file.isFile() && file.canWrite()){
+        return true;
+      }
+    }
+
+    return false;
+  }
