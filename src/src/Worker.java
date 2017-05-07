@@ -1,10 +1,13 @@
+package src;
 
 // 入出力ストリームを使うので，java.io.* を import
 import java.io.*;
 // ソケットを使うので java.net.* を import 
 import java.net.*;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.io.file;
+import java.util.Date;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -17,7 +20,7 @@ class Worker implements Runnable {
 	PrintWriter out;
 	BufferedReader in;
 	// サーバ本体のメソッドを呼び出すために記憶
-	ChatServer chatServer;
+	ChatServer ChatServer;
 	// 担当するクライアントの番号
 	int n;
 	// クライアントの総数
@@ -28,12 +31,12 @@ class Worker implements Runnable {
 	// クライアントのログイン時間
 	static long Logintime[] = new long[N];
 	static long lifetime = 20000;
-	static ArrayList<Receiveddata> messageList=new ArrayList<Receiveddata>();
-
+	static ArrayList<Receiveddata> messageList = new ArrayList<Receiveddata>();
+	
 	// コンストラクタ
 	public Worker(int n, Socket s, ChatServer cs) {
 		this.n = n;
-		chatServer = cs;
+		ChatServer = cs;
 		sock = s;
 		out = null;
 		in = null;
@@ -60,16 +63,18 @@ class Worker implements Runnable {
 			line = in.readLine();
 			// ソケットからの入力があったら，
 			while (line != null && !(line.equals(""))) {
-				System.out.println(line);
 				tempMessage+=line;
-				line = null;
 				count++;
 				line = in.readLine();
 			}
-			
-			// messageListの生成
+			Lifetime(N, Integer.parseInt(usernumber), Logintime, AliveFlag, lifetime);
+			AliveFlag[Integer.parseInt(usernumber)] = true;
+			DeadOrAlive = shorten(AliveFlag, DeadOrAlive);
+
+			// 本文があるのならmessageListの生成
 			// 引数は左から、誰が送ってきたか、本文全体、すでに送ったかどうか（送信済みの場合はtrue）、いつの投稿か
-			messageList.add(new Receiveddata(usernumber,tempMessage,new isSent[N],System.currentTimeMillis()));
+			if(count!=0){
+			messageList.add(new Receiveddata(usernumber,tempMessage,new boolean[N],System.currentTimeMillis()));
 			
 			// messegeListのデータ数100件超えたら古いものから削除
 			if(messageList.size()>100){
@@ -78,53 +83,51 @@ class Worker implements Runnable {
 					messageList.remove(j);
 				}
 			}
-			
 			// logのテキストに追加する
 						try{
 						      if (checkBeforeWritefile(ChatServer.file)){
 						        FileWriter filewriter = new FileWriter(ChatServer.file, true);
-						        
-						        filewriter.write(messageList.get(messageList.get(messageList.size()).receivedTime+" "+messageList.size()).usernumber+" "+messageList.get(messageList.size()).tempMessage+"/n");
+						        SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");					        
+						        filewriter.write(sdf1.format(new Date(messageList.get(messageList.size()-1).receivedTime))+" "+messageList.get(messageList.size()-1).usernumber+" "+messageList.get(messageList.size()-1).tempMessage+"/n");
 
 						        filewriter.close();
 						      }else{
-						        System.out.println("Lolita_log.textに書き込めません");
+						        System.out.println("Lolita_log.txtに書き込めません");
 						      }
 						    }catch(IOException e){
 						      System.out.println(e);
 						    }
-						
+			}
 			
+			// 自動送信してきたクライアントに送る
+			// 手動送信（本文付き）なら、何もしない
 			// allMessegeに未読分を格納
-			for(int i=0;i<messageList.size();i++){
-				if(!messageList.get(i).isSent[int(usernumber)]){
-					allMessege+=messageList.get(i).usernumber;
-					allMessege+="roli";
-					allMessege+=messageList.get(i).tempMassage;
-					allMessege+="roli";
-					messageList.get(i).isSent[int(usernumber)]=true;
-				};
-			}
 			
-			// 送信してきたクライアントに送る
-			// もし自動送信の信号なら、
-			if (count == 0) {
-				Lifetime(N, Integer.parseInt(usernumber), Logintime, AliveFlag, lifetime);
-				AliveFlag[Integer.parseInt(usernumber)] = true;
-				DeadOrAlive = shorten(AliveFlag, DeadOrAlive);
-			// 手動送信（本文付き）なら、
-			} else {
-				DeadOrAlive = shorten(AliveFlag, DeadOrAlive);
-			}
-			chatServer.sendAll(DeadOrAlive+allMessage);
+				if (count == 0) {
+					for(int i=0;i<messageList.size();i++){
+						if(!messageList.get(i).isSent[Integer.parseInt(usernumber)]){
+							
+							allMessage+=messageList.get(i).usernumber;
+							allMessage+="roli";
+							allMessage+=messageList.get(i).tempMessage;
+							allMessage+="roli";
+							messageList.get(i).isSent[Integer.parseInt(usernumber)]=true;
+							
+						};
+					}
+					ChatServer.sendAll(DeadOrAlive+allMessage);
+					System.out.println("送信:"+DeadOrAlive+allMessage);
+					} 			
+		
+			
 			
 			// 自分自身をテーブルから取り除く
-			chatServer.remove(n);
+			ChatServer.remove(n);
 			// ソケットを閉じる
 			sock.close();
 		} catch (IOException ioe) {
 			System.out.println(ioe);
-			chatServer.remove(n);
+			ChatServer.remove(n);
 		}
 	}
 
@@ -152,27 +155,29 @@ class Worker implements Runnable {
 		}
 		return;
 	}
+	
+	private static boolean checkBeforeWritefile(File file){
+	    if (file.exists()){
+	      if (file.isFile() && file.canWrite()){
+	        return true;
+	      }
+	    }
+
+	    return false;
+	  }
 }
 
-class Receiveddata{
+class Receiveddata {
 	String usernumber;
-	String tempMassage;
+	String tempMessage;
 	boolean isSent[];
 	long receivedTime;
-	public Receiveddata(String user_number,String temp_Massage,boolean is_Sent[],long received_Time){
-		user_number=usernumber;
-		temp_Massage=tempMassage;
-		is_Sent=isSent;
-		received_Time=receivedTime;
+
+	public Receiveddata(String user_number, String temp_Message, boolean is_Sent[], long received_Time) {
+		usernumber=user_number;
+		this.tempMessage=temp_Message;
+		isSent=is_Sent;
+		receivedTime=received_Time;
 	}
+	
 }
-
-private static boolean checkBeforeWritefile(File file){
-    if (file.exists()){
-      if (file.isFile() && file.canWrite()){
-        return true;
-      }
-    }
-
-    return false;
-  }

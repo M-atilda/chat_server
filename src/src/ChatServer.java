@@ -1,16 +1,19 @@
+package src;
 
 //入出力ストリームを使うので，java.io.* を import
 import java.io.*;
 // ソケットを使うので java.net.* を import 
 import java.net.*;
+import java.io.File;
 
 class ChatServer {
 	// 各クライアントを記憶する配列．
 	Worker workers[];
+	public static File file = new File("Lolita_log.txt");
 
 	// コンストラクタ
 	public ChatServer() {
-		// ポート番号を 4444にする．同じマシンで同じポートを使うことは
+		// ポート番号を 1707にする．同じマシンで同じポートを使うことは
 		// できないので，ユーザごとに変えること(1023以下は使えない)
 		int port = 1707;
 		// 配列を作成
@@ -47,7 +50,7 @@ class ChatServer {
 	public static void main(String args[]) throws IOException {
 		// インスタンスを1つだけ作る．
 		new ChatServer();
-		public static File file = new File("Lolita_log.txt");
+		
 	}
 
 	// synchronized は，同期のためのキーワード．つけなくても動くことはある．
