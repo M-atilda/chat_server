@@ -4,42 +4,46 @@ package src;
 import java.io.*;
 // ソケットを使うので java.net.* を import 
 import java.net.*;
-import java.io.File;
 
-class ChatServer {
+
+public class ChatServer {
 	// 各クライアントを記憶する配列．
 	Worker workers[];
-	public static File file = new File("Lolita_log.txt");
 
-	// コンストラクタ
+    // TODO:
+    public static DataManager data_manager;
+
+
+    // コンストラクタ
 	public ChatServer() {
 		// ポート番号を 1707にする．同じマシンで同じポートを使うことは
 		// できないので，ユーザごとに変えること(1023以下は使えない)
-		int port = 1707;
+		int port = ParamsProvider.getPortNum();
+        System.out.println("server waiting on the port [" + port + "]");
 		// 配列を作成
-		workers = new Worker[20];
+		workers = new Worker[ParamsProvider.getMaxThreadNum()];
 		Socket sock;
 		try {
 			// ServerSocketを作成
 			ServerSocket servsock = new ServerSocket(port);
 			// 無限ループ，breakが来るまで
 			while (true) {
-				// クライアントからのアクセスをうけつけた．
+				// クライアントからのアクセスをうけつけた
 				sock = servsock.accept();
 				int i;
 				// 配列すべてについて
 				for (i = 0; i < workers.length; i++) {
-					// 空いている要素があったら，
+					// 空いている要素があったら
 					if (workers[i] == null) {
 						// Workerを作って
-						workers[i] = new Worker(i, sock, this);
+						workers[i] = new Worker(i, sock, this, ChatServer.data_manager);
 						// 対応するスレッドを走らせる
 						new Thread(workers[i]).start();
 						break;
 					}
 				}
 				if (i == workers.length) {
-					System.out.println("Can't serve");
+					System.out.println("Can't serve because the threads are full");
 				}
 			}
 		} catch (IOException ioe) {
@@ -47,25 +51,29 @@ class ChatServer {
 		}
 	}
 
+    /*
 	public static void main(String args[]) throws IOException {
-		// インスタンスを1つだけ作る．
+		// インスタンスを1つだけ作る
 		new ChatServer();
-		
+        data_manager = DataManager.dmFactory();
 	}
+    */
 
-	// synchronized は，同期のためのキーワード．つけなくても動くことはある．
+	// synchronized は，同期のためのキーワード．つけなくても動くことはある
 	public synchronized void sendAll(String s) {
+        /*
 		int i;
 		for (i = 0; i < workers.length; i++) {
 			// workers[i]が空でなければ文字列を送る
 			if (workers[i] != null)
 				workers[i].send(s);
 		}
+        */
 	}
 
-	// クライアント n が抜けたこと記録し，他のユーザに送る．
+	// クライアント n が抜けたこと記録し，他のユーザに送る
 	public void remove(int n) {
 		workers[n] = null;
-		sendAll("quiting [" + n + "]");
+		//sendAll("quiting [" + n + "]");
 	}
 }
