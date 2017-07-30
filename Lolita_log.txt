@@ -1,1 +1,8 @@
-[Login] ID:2PASS:[B@36dd1cc4[Login] ID:2PASS:[B@64dcdaac[Login] ID:2PASS:[B@71fc439e[Login] ID:2PASS:[B@4081b5a4[Login] ID:2PASS:[B@4081b5a4[Login] ID:2PASS:[B@4081b5a4[Login] ID:2PASS:[B@4081b5a4[Login] ID:2PASS:[B@4081b5a4[Login] ID:2PASS:[B@71fc439e
+[Info]server waiting on the port [1707][Info]ID2 trues to login with password nakagawa[Info]ID2 login
+[Info]ID3 trues to login with password hayakawa[Info]ID3 login
+[Info]talk
+2017-07-31 01:57:23.574[ user:2 | kind:1 | size:24 | processed_by:receive ][Info]talk
+2017-07-31 01:57:38.374[ user:3 | kind:1 | size:4 | processed_by:receive ][Info]ID5 trues to login with password fujitake[Info]ID5 login
+[Info]talk
+2017-07-31 01:58:28.272[ user:5 | kind:1 | size:13 | processed_by:receive ][Info]talk
+2017-07-31 01:58:47.476[ user:3 | kind:1 | size:7 | processed_by:receive ]

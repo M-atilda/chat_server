@@ -1,0 +1,33 @@
+	//kind [0~225]//
+
+[0] talkdata(S -> C) 
+
+	return login status + ("roliroli" + id + "roliroli" + comment)*n;
+
+[1] talkdata(C -> S)
+
+	return comment;
+
+[2] jpgfile(S -> C)
+
+	return byte[];
+
+[3] jpgfile(C -> S)
+
+	return byte[];
+
+
+
+
+
+
+
+
+[254] login(S -> C)
+
+	if (password is correct) {return T;(header‚É¡Œã—p‚¢‚épass(8byte)‚ğ‚¢‚ê‚é)}
+	else {return F;}
+
+[255] login(C -> S) 
+
+	return password;(pass = byte[]{0,...,0})

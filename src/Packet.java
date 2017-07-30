@@ -13,7 +13,6 @@ class Packet
     public int getKind() { return this.header.m_kind; }
     public void setKind(int _kind) { this.header.m_kind = _kind; }
     public byte[] getPass() { return this.header.m_passphrase; }
-
     private byte[] contents;
     public byte[] getContents() { return this.contents; }
     protected void setContents(byte[] _contents) { this.contents = _contents; }
@@ -24,7 +23,7 @@ class Packet
     protected void setProcessedTime(long _pt) { this.processed_time = _pt; }
 
     public String getProcessedCommand() { return "receive"; }
-    
+
     protected void init(int _id, int _kind, byte[] _pass, byte[] _contents)
     {
         this.header = new Header(_id, _kind, _pass);

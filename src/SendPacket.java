@@ -12,19 +12,21 @@ public class SendPacket extends Packet
 
     public static SendPacket spFactory(ReceivePacket rp, DataManager dm) throws NoneLoginAccessException
     {
-        AbstractCommand cmd = CommandManager.commandFactory(rp.getKind());
+        AbstractCommand cmd = CommandManager.commandFactory(rp, dm);
         SendPacket sp = new SendPacket();
         sp.processed_with = cmd;
 
-        if (cmd.getName() == "LoginCmd")
-            {
-                LoginCmd lc = (LoginCmd)cmd;
-                lc.execute(rp, sp, dm);
-            }
-        else
-            {
-                cmd.execute(rp, sp, dm);
-            }
+        //FIXME:
+        if (cmd.getName() == "LoginCmd"){
+            LoginCmd lc = (LoginCmd)cmd;
+            lc.execute(sp);
+        } else if (cmd.getName() == "TalkCmd") {
+            TalkCmd tc = (TalkCmd)cmd;
+            tc.execute(sp);
+        } else {
+            cmd.execute(sp);
+        }
+        //cmd.execute(sp);
         return sp;
     }
 } // SendPacket

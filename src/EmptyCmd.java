@@ -5,11 +5,13 @@ package src;
 
 public class EmptyCmd extends AbstractCommand
 {
+    EmptyCmd(ReceivePacket rp, DataManager dm) {
+        this.m_rp = rp;
+        this.m_dm = dm;
+    }
+    
     @Override
     String getName() { return "EmptyCmd"; }
-
-    @Override
-    protected void make_header() {}
 
     @Override
     protected void make_contents() {}

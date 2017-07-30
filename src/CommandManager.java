@@ -6,17 +6,22 @@ package src;
 
 public class CommandManager
 {
-    public static AbstractCommand commandFactory(int kind)
+    public static AbstractCommand commandFactory(ReceivePacket rp, DataManager dm)
     {
         AbstractCommand result;
-        switch(kind)
+        switch(rp.getKind())
             {
             case 255:
-                result = new LoginCmd();
+                System.out.println("[Debug]LoginCmd generated (commandFactory:CommandManager.java)");
+                result = new LoginCmd(rp, dm);
+                break;
+            case 1:
+                System.out.println("[Debug]TalkCmd generated (commandFactory:CommandManager.java)");
+                result = new TalkCmd(rp, dm);
                 break;
             default:
-                result = new EmptyCmd();
-                break;
+                System.out.println("[Debug]EmptyCmd generated (commandFactory:CommandManager.java)");
+                result = new EmptyCmd(rp, dm);
             }
         return result;
     }

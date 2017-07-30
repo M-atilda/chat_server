@@ -1,3 +1,8 @@
+/*
+ *@file:    ChatServer.java
+ *@author:  maeda, iwamoto
+ *@date:    17-05-06
+ */
 package src;
 
 //入出力ストリームを使うので，java.io.* を import
@@ -8,7 +13,7 @@ import java.net.*;
 
 public class ChatServer {
 	// 各クライアントを記憶する配列．
-	Worker workers[];
+	static Worker workers[] = new Worker[ParamsProvider.getMaxThreadNum()];
 
     // TODO:
     public static DataManager data_manager;
@@ -19,9 +24,8 @@ public class ChatServer {
 		// ポート番号を 1707にする．同じマシンで同じポートを使うことは
 		// できないので，ユーザごとに変えること(1023以下は使えない)
 		int port = ParamsProvider.getPortNum();
-        System.out.println("server waiting on the port [" + port + "]");
-		// 配列を作成
-		workers = new Worker[ParamsProvider.getMaxThreadNum()];
+        System.out.println("[Info]server waiting on the port [" + port + "]");
+        DataManager.logging("[Info]server waiting on the port [" + port + "]\n");
 		Socket sock;
 		try {
 			// ServerSocketを作成
@@ -36,7 +40,7 @@ public class ChatServer {
 					// 空いている要素があったら
 					if (workers[i] == null) {
 						// Workerを作って
-						workers[i] = new Worker(i, sock, this, ChatServer.data_manager);
+						workers[i] = new Worker(i, sock, ChatServer.data_manager);
 						// 対応するスレッドを走らせる
 						new Thread(workers[i]).start();
 						break;
@@ -49,31 +53,11 @@ public class ChatServer {
 		} catch (IOException ioe) {
 			System.out.println(ioe);
 		}
-	}
-
-    /*
-	public static void main(String args[]) throws IOException {
-		// インスタンスを1つだけ作る
-		new ChatServer();
-        data_manager = DataManager.dmFactory();
-	}
-    */
-
-	// synchronized は，同期のためのキーワード．つけなくても動くことはある
-	public synchronized void sendAll(String s) {
-        /*
-		int i;
-		for (i = 0; i < workers.length; i++) {
-			// workers[i]が空でなければ文字列を送る
-			if (workers[i] != null)
-				workers[i].send(s);
-		}
-        */
-	}
+	} // ChatServer
 
 	// クライアント n が抜けたこと記録し，他のユーザに送る
-	public void remove(int n) {
+    // called in the worker thread's run process
+	public static void remove(int n) {
 		workers[n] = null;
-		//sendAll("quiting [" + n + "]");
 	}
 }
