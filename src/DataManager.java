@@ -116,8 +116,8 @@ public class DataManager
         }
         public SupplyData(int _sender_id, String _kind, byte[] _contents, String _name)
         {
+            this(_sender_id, _kind, _contents);
             this.setName(_name);
-            SupplyData(_sender_id, _kind, _contents);
         }
 
         public void setName(String _name) { this.m_name = _name; }
@@ -141,9 +141,9 @@ public class DataManager
 
         // dump image files
         if (_kind == "Icon") {
-            this.saveImage("icon" + _id + ".png", _contents);
+            this.saveImage("icon" + _id + ".jpg", _contents);
         } else if (_kind == "Image") {
-            this.saveImage(_name, _contents);
+            this.saveImage(_name[0], _contents);
         }
 
         // remove the old data when the container is full
@@ -181,7 +181,7 @@ public class DataManager
             al_supply_data_pool = (ArrayList<SupplyData>)ois.readObject();
             ois.close();
         } catch (Exception e) {
-            System,out.println(e.toString());
+            System.out.println(e.toString());
             al_supply_data_pool = new ArrayList<SupplyData>();
         }
     }
@@ -216,30 +216,31 @@ public class DataManager
     private void saveImage(String _name, byte[] _contents) throws Exception
     {
         try {
-            File f = new File(_name);
-            FileWriter fw = new FileWriter(f, false);
-            fw.write(_contents);
-            fw.flush();
-            fw.close();
+            FileOutputStream os = new FileOutputStream("image/" + _name);
+            os.write(_contents, 0, _contents.length);
+            os.flush();
+            os.close();
+            DataManager.logging("[Info]save image " + _name);
         } catch (Exception e) {
-            throws e;
+            throw e;
         }
     }
 
-    private byte[] getImageByBytes(String _name)
+    public byte[] getImageByBytes(String _name)
     {
         ArrayList<Byte> al_buffer = new ArrayList<Byte>();
         byte[] temp_buffer = new byte[1024];
         try {
-            File f = new File(_name);
+            File f = new File("image/" + _name);
             FileInputStream fis = new FileInputStream(f);
             int file_length;
             do {
                 file_length = fis.read(temp_buffer);
                 for (int i = 0; i < file_length; i++) { al_buffer.add((Byte)temp_buffer[i]); }
-            } while (file_length != 0);
+            } while (file_length == temp_buffer.length);
+            DataManager.logging("[Info]read an image " + _name);
         } catch (IOException e) {
-            DataManager.logging("[Error]failed to read image file <" + _name + ">(getImageByBytes:DataManager.java\n)");
+            DataManager.logging("[Error]failed to read image file <image/" + _name + ">(getImageByBytes:DataManager.java\n)");
             DataManager.logging(e.toString() + "\n");
         }
 

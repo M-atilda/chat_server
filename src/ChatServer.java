@@ -24,7 +24,6 @@ public class ChatServer {
 		// ポート番号を 1707にする．同じマシンで同じポートを使うことは
 		// できないので，ユーザごとに変えること(1023以下は使えない)
 		int port = ParamsProvider.getPortNum();
-        System.out.println("[Info]server waiting on the port [" + port + "]");
         DataManager.logging("[Info]server waiting on the port [" + port + "]\n");
 		Socket sock;
 		try {

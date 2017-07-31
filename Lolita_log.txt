@@ -5,4 +5,79 @@
 2017-07-31 01:57:38.374[ user:3 | kind:1 | size:4 | processed_by:receive ][Info]ID5 trues to login with password fujitake[Info]ID5 login
 [Info]talk
 2017-07-31 01:58:28.272[ user:5 | kind:1 | size:13 | processed_by:receive ][Info]talk
-2017-07-31 01:58:47.476[ user:3 | kind:1 | size:7 | processed_by:receive ]
+2017-07-31 01:58:47.476[ user:3 | kind:1 | size:7 | processed_by:receive ][Info]server waiting on the port [1707]
+[Info]server waiting on the port [1707]
+[Info]ID2 tries to login with password nakagawa
+[Info]ID2 login
+[Info]talk 2017-08-01 00:55:28.412[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Error]failed to read image file <image/icon0.jpg>(getImageByBytes:DataManager.java
+)java.io.FileNotFoundException: image/icon0.jpg (No such file or directory)
+[Info]server waiting on the port [1707]
+[Info]ID2 tries to login with password nakagawa
+[Info]ID2 login
+[Info]talk 2017-08-01 00:58:57.716[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]server waiting on the port [1707]
+[Info]ID2 tries to login with password nakagawa
+[Info]ID2 login
+[Info]talk 2017-08-01 01:03:18.416[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]server waiting on the port [1707]
+[Info]server waiting on the port [1707]
+[Info]ID2 tries to login with password nakagawa
+[Info]ID2 login
+[Info]talk 2017-08-01 01:05:25.124[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon0.jpg[Info]ID2 tries to login with password nakagawa
+[Info]ID2 login
+[Info]talk 2017-08-01 01:07:31.855[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon0.jpg[Info]ID2 tries to login with password nakagawa
+[Info]ID2 login
+[Info]talk 2017-08-01 01:07:50.917[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon0.jpg[Info]talk 2017-08-01 01:08:05.685[ user:2 | kind:1 | size:3 | processed_by:receive ]
+[Info]ID3 tries to login with password hayakawa
+[Info]ID3 login
+[Info]talk 2017-08-01 01:08:18.569[ user:3 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon0.jpg[Info]talk 2017-08-01 01:08:26.321[ user:3 | kind:1 | size:3 | processed_by:receive ]
+[Info]server waiting on the port [1707]
+[Info]ID2 tries to login with password nakagawa
+[Info]ID2 login
+[Info]talk 2017-08-01 01:26:07.303[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon0.jpg[Info]server waiting on the port [1707]
+[Info]ID2 tries to login with password nakagawa
+[Info]ID2 login
+[Info]talk 2017-08-01 01:27:32.666[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon0.jpg[Info]server waiting on the port [1707]
+[Info]ID2 tries to login with password nakagawa
+[Info]ID2 login
+[Info]talk 2017-08-01 01:29:38.525[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon0.jpg[Info]server waiting on the port [1707]
+[Info]ID2 tries to login with password nakagawa
+[Info]ID2 login
+[Info]talk 2017-08-01 01:31:10.560[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon0.jpg[Info]save image icon2.jpg[Info]server waiting on the port [1707]
+[Info]ID2 tries to login with password nakagawa
+[Info]ID2 login
+[Info]talk 2017-08-01 01:36:09.382[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon0.jpg[Info]save image icon2.jpg[Info]server waiting on the port [1707]
+[Info]ID2 tries to login with password nakagawa
+[Info]ID2 login
+[Info]talk 2017-08-01 01:41:31.092[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon0.jpg[Info]save image icon2.jpg[Info]server waiting on the port [1707]
+[Info]ID2 tries to login with password nakagawa
+[Info]ID2 login
+[Info]talk 2017-08-01 01:51:53.866[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon0.jpg[Info]save image icon2.jpg[Info]server waiting on the port [1707]
+[Info]ID2 tries to login with password nakagawa
+[Info]ID2 login
+[Info]talk 2017-08-01 01:57:00.039[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon0.jpg[Info]save image icon2.jpg[Info]server waiting on the port [1707]
+[Info]ID2 tries to login with password nakagawa
+[Info]ID2 login
+[Info]talk 2017-08-01 02:01:46.897[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon0.jpg[Info]save image icon2.jpg[Info]server waiting on the port [1707]
+[Info]ID2 tries to login with password nakagawa
+[Info]ID2 login
+[Info]talk 2017-08-01 02:30:25.593[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon0.jpg[Info]save image icon2.jpg[Info]server waiting on the port [1707]
+[Info]ID2 tries to login with password nakagawa
+[Info]ID2 login
+[Info]talk 2017-08-01 02:31:18.263[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon0.jpg[Info]save image icon2.jpg

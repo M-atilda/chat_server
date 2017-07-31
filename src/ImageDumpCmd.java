@@ -19,9 +19,38 @@ public class ImageDumpCmd extends AbstractCommand
         try {
             if (is_icon) {
                 this.m_dm.pushSupplyData(this.m_rp.getId(), "Icon", this.m_rp.getContents());
-                System.out.println("[Debug]store icon\n");
+                System.out.println("[Debug]store icon of ID" + this.m_rp.getId() + "\n");
             } else {
-                this.m_dm.pushSupplyData(this.m_rp.getId(), "Image", this.m_rp.getContents(), );
+                // get the image name and its contents
+                byte[] divide_token = new byte[8];
+                String divide_token_str = "roliroli";
+                for (int i = 0; i < 8; i++) { divide_token[i] = (byte)divide_token_str.toCharArray()[i]; }
+                int file_name_end = 0;
+                byte[] _contents = this.m_rp.getContents();
+                try {
+                    //TODO: use method (too much nesting)
+                    while (true) {
+                        if (_contents[file_name_end] == divide_token[0]) {
+                            boolean is_end = true;
+                            for (int j = 1; j < 8; j++) {
+                                if (_contents[file_name_end + j] != divide_token[j]) {
+                                    is_end = false;
+                                    break;
+                                }
+                            }
+                            if (is_end) { break; }
+                        }
+                        file_name_end++;
+                    }
+                } catch (Exception e) { // maybe out of index exception occured
+                    DataManager.logging("[Error]failed to get filename from the receive packet contents(ImageDumpCmd:ImageDumpCmd.java)");
+                    return;
+                }
+
+                byte[] image_name_bytes = new byte[file_name_end];
+                for (int i = 0; i < file_name_end; i++) { image_name_bytes[i] = _contents[i]; }
+                String image_name = new String(image_name_bytes, "UTF-8");
+                this.m_dm.pushSupplyData(this.m_rp.getId(), "Image", this.m_rp.getContents(), image_name);
                 System.out.println("[Debug]store image\n");            
             }
             is_success_to_preserve = true;
@@ -36,15 +65,19 @@ public class ImageDumpCmd extends AbstractCommand
     @Override
     protected void make_header()
     {
-        this.m_sp.init(this.m_rp.getId(), 6, this.m_rp.getPass(), new byte[0]);
+        this.m_sp.init(this.m_rp.getId(), 4, this.m_rp.getPass(), new byte[0]);
     }
 
     @Override
     protected void make_contents()
     {
-        System.out.println("[Debug]make image_dump response contents(make_contents:ImageCmd.java)");
+        System.out.println("[Debug]make image_dump response contents(make_contents:ImageDumpCmd.java)");
         byte[] result = new byte[1];
-        if (this.is_success_to_preserve) { result[0] = (byte)'T'; } else { result[0] = (byte)'F'; }
+        if (this.is_success_to_preserve) {
+            result[0] = (byte)'T';
+        } else {
+            result[0] = (byte)'F';
+        }
         this.m_sp.setContents(result);
     }
 } // TalkCmd

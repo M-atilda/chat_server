@@ -23,7 +23,7 @@ public class ImageReadCmd extends AbstractCommand
     @Override
     protected void make_header()
     {
-        this.m_sp.init(this.m_rp.getId(), 4, this.m_rp.getPass(), new byte[0]);
+        this.m_sp.init(this.m_rp.getId(), 2, this.m_rp.getPass(), new byte[0]);
     }
 
     
@@ -31,9 +31,13 @@ public class ImageReadCmd extends AbstractCommand
     protected void make_contents()
     {
         System.out.println("[Debug]make image_read response contents(make_contents:ImageCmd.java)");
-        String image_name = new String(this.m_rp.getContents(), "UTF-8");
-        byte[] result = this.m_dm.getImageByBytes(image_name);
-        this.m_sp.setContents(result);
+        try {
+            String image_name = new String(this.m_rp.getContents(), "UTF-8");
+            byte[] result = this.m_dm.getImageByBytes(image_name);
+            this.m_sp.setContents(result);
+        } catch (Exception e) {
+            DataManager.logging("[Error]failed to encode the image file name(make_contents:ImageReadCmd.java)");
+        }
     }
 } // TalkCmd
 

@@ -23,11 +23,11 @@ public class CommandManager
                 System.out.println("[Debug]ImageDumpCmd(icon) generated (commandFactory:CommandManager.java)");
                 result = new ImageDumpCmd(rp, dm, true);
                 break;
-            case 3:
+            case 7:
                 System.out.println("[Debug]ImageDumpCmd generated (commandFactory:CommandManager.java)");
                 result = new ImageDumpCmd(rp, dm, false);
                 break;
-            case 4:
+            case 3:
                 System.out.println("[Debug]ImageReadCmd generated (commandFactory:CommandManager.java)");
                 result = new ImageReadCmd(rp, dm);
                 break;
