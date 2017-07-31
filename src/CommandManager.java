@@ -19,6 +19,18 @@ public class CommandManager
                 System.out.println("[Debug]TalkCmd generated (commandFactory:CommandManager.java)");
                 result = new TalkCmd(rp, dm);
                 break;
+            case 5:
+                System.out.println("[Debug]ImageDumpCmd(icon) generated (commandFactory:CommandManager.java)");
+                result = new ImageDumpCmd(rp, dm, true);
+                break;
+            case 3:
+                System.out.println("[Debug]ImageDumpCmd generated (commandFactory:CommandManager.java)");
+                result = new ImageDumpCmd(rp, dm, false);
+                break;
+            case 4:
+                System.out.println("[Debug]ImageReadCmd generated (commandFactory:CommandManager.java)");
+                result = new ImageReadCmd(rp, dm);
+                break;
             default:
                 System.out.println("[Debug]EmptyCmd generated (commandFactory:CommandManager.java)");
                 result = new EmptyCmd(rp, dm);

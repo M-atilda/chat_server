@@ -18,10 +18,6 @@ public abstract class AbstractCommand
     public void execute(SendPacket sp) throws NoneLoginAccessException
     {
         this.m_sp = sp;
-
-        if (this.m_rp == null) { System.out.println("rp is null\n"); }
-        if (this.m_sp == null) { System.out.println("sp is null\n"); }
-        if (this.m_dm == null) { System.out.println("dm is null\n"); }
         
         // template method patern? (more subdivision)
         if (validation_check()) {

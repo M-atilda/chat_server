@@ -6,12 +6,17 @@ package src;
 import java.util.ArrayList;
 import java.io.File;
 import java.io.FileWriter;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.FileNotFoundException;
 import java.text.SimpleDateFormat;
 import java.lang.StringBuilder;
 import java.io.IOException;
+import java.io.Serializable;
+import java.io.ObjectOutputStream;
+import java.io.ObjectInputStream;
 import java.util.Date;
 import java.lang.InterruptedException;
-
 
 public class DataManager
 {
@@ -94,8 +99,9 @@ public class DataManager
     public boolean[] getLoginMember() { return this.a_login_member; }
 
 
-    class SupplyData {
+    class SupplyData implements Serializable {
         private int m_sender_id;
+        private String m_name = "";
         private String m_data_kind;
         private boolean[] m_is_sent;
         private ArrayList<Byte> m_contents;
@@ -108,17 +114,39 @@ public class DataManager
             this.m_contents = new ArrayList<Byte>();
             for (int i = 0; i < _contents.length; i++) { this.m_contents.add((Byte)_contents[i]); }
         }
+        public SupplyData(int _sender_id, String _kind, byte[] _contents, String _name)
+        {
+            this.setName(_name);
+            SupplyData(_sender_id, _kind, _contents);
+        }
 
+        public void setName(String _name) { this.m_name = _name; }
+        public String getName() { return this.m_name; }
         public int getSenderId() { return this.m_sender_id; }
         public String getDataKind() { return this.m_data_kind; }
         public boolean isSentTo(int _id) { return this.m_is_sent[_id]; }
         public void sendTo(int _id) { this.m_is_sent[_id] = true;}
         public ArrayList<Byte> getContents() { return this.m_contents; }
     } // SupplyData
-    private ArrayList<SupplyData> al_supply_data_pool = new ArrayList<SupplyData>();
+    private ArrayList<SupplyData> al_supply_data_pool;
 
-    public void pushSupplyData(int _id, String _kind, byte[] _contents) {
-        this.al_supply_data_pool.add(new SupplyData(_id, _kind, _contents));
+    public void pushSupplyData(int _id, String _kind, byte[] _contents, String... _name) throws Exception
+    {
+        //push receive data to the container
+        if (_name.length == 0) {
+            this.al_supply_data_pool.add(new SupplyData(_id, _kind, _contents));
+        } else {
+            this.al_supply_data_pool.add(new SupplyData(_id, _kind, _contents, _name[0]));
+        }
+
+        // dump image files
+        if (_kind == "Icon") {
+            this.saveImage("icon" + _id + ".png", _contents);
+        } else if (_kind == "Image") {
+            this.saveImage(_name, _contents);
+        }
+
+        // remove the old data when the container is full
         if (al_supply_data_pool.size() > ParamsProvider.getMaxStorageSupplyData()) { al_supply_data_pool.remove(0); }
     }
     public ArrayList<SupplyData> getUnsentDataList(int _id, String _kind) {
@@ -128,6 +156,7 @@ public class DataManager
                 al_result.add(sd);
                 sd.sendTo(_id);
             }
+            //TODO: get the information about image, icon and so on
         }
         return al_result;
     }
@@ -147,6 +176,14 @@ public class DataManager
             fw = new FileWriter(DataManager.log_file, true); } catch(Exception e) { System.out.println("[Error]Can't open logging file(DataManager:DataManager.java)\n");
         }
         // TODO: load the dumped data at the initialization
+        try {
+            ObjectInputStream ois = new ObjectInputStream(new FileInputStream(ParamsProvider.getDumpFileName()));
+            al_supply_data_pool = (ArrayList<SupplyData>)ois.readObject();
+            ois.close();
+        } catch (Exception e) {
+            System,out.println(e.toString());
+            al_supply_data_pool = new ArrayList<SupplyData>();
+        }
     }
     // NOTE: singleton
     public static DataManager dmFactory()
@@ -176,6 +213,41 @@ public class DataManager
         this.a_last_login_time[rp.getId()] = System.currentTimeMillis();
     }
 
+    private void saveImage(String _name, byte[] _contents) throws Exception
+    {
+        try {
+            File f = new File(_name);
+            FileWriter fw = new FileWriter(f, false);
+            fw.write(_contents);
+            fw.flush();
+            fw.close();
+        } catch (Exception e) {
+            throws e;
+        }
+    }
+
+    private byte[] getImageByBytes(String _name)
+    {
+        ArrayList<Byte> al_buffer = new ArrayList<Byte>();
+        byte[] temp_buffer = new byte[1024];
+        try {
+            File f = new File(_name);
+            FileInputStream fis = new FileInputStream(f);
+            int file_length;
+            do {
+                file_length = fis.read(temp_buffer);
+                for (int i = 0; i < file_length; i++) { al_buffer.add((Byte)temp_buffer[i]); }
+            } while (file_length != 0);
+        } catch (IOException e) {
+            DataManager.logging("[Error]failed to read image file <" + _name + ">(getImageByBytes:DataManager.java\n)");
+            DataManager.logging(e.toString() + "\n");
+        }
+
+        byte[] result = new byte[al_buffer.size()];
+        for (int i = 0; i < result.length; i++) { result[i] = al_buffer.get(i); }
+        return result;
+    }
+
 
 
 
@@ -183,7 +255,7 @@ public class DataManager
 
     public static void logging(String message)
     {
-        // logのテキストに追加する
+        System.out.println(message); // DEBUG
         try {
             if (checkBeforeWritefile(DataManager.log_file)) {
                 DataManager.fw.write(message);
@@ -217,7 +289,15 @@ public class DataManager
     // NOTE: dump when the surver dies
     public void dump(String dump_file_name)
     {
-        // TODO: impl
+        try {
+            ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(ParamsProvider.getDumpFileName()));
+            oos.writeObject(al_supply_data_pool);
+            oos.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private static boolean checkBeforeWritefile(File file){

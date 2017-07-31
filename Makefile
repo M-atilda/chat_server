@@ -5,9 +5,9 @@ all:
 	rm src/*.class
 	javac -g -verbose Main.java
 
-failed:
+clean:
+	rm *.class
 	rm src/*.class
-	javac -g -verbose Main.java
 
 new:
 	javac -g -verbose Main.java

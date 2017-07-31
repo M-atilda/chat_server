@@ -14,9 +14,12 @@ public class TalkCmd extends AbstractCommand
         this.m_dm = dm;
 
         if (this.m_rp.getContents().length != 0) {
-            this.m_dm.pushSupplyData(this.m_rp.getId(), "Talk", this.m_rp.getContents());
-            System.out.println("[Debug]talk contents\n");
-            DataManager.logging_talk(this.m_rp);
+            try {
+                this.m_dm.pushSupplyData(this.m_rp.getId(), "Talk", this.m_rp.getContents());
+                DataManager.logging_talk(this.m_rp);
+            } catch (Exception e) {
+                DataManager.logging("[Error]storeing failed about talk message(TalkCmd:TalkCmd.java)");
+            }
         }
     }
 

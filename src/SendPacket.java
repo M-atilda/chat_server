@@ -23,6 +23,12 @@ public class SendPacket extends Packet
         } else if (cmd.getName() == "TalkCmd") {
             TalkCmd tc = (TalkCmd)cmd;
             tc.execute(sp);
+        } else if (cmd.getName() == "ImageDumpCmd") {
+            ImageDumpCmd idc = (ImageDumpCmd)cmd;
+            idc.execute(sp);
+        } else if (cmd.getName() == "ImageReadCmd") {
+            ImageReadCmd irc = (ImageReadCmd)cmd;
+            irc.execute(sp);
         } else {
             cmd.execute(sp);
         }
