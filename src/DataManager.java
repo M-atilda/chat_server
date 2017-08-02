@@ -105,6 +105,7 @@ public class DataManager
         private String m_data_kind;
         private boolean[] m_is_sent;
         private ArrayList<Byte> m_contents;
+        private long m_pushed_time;
 
         public SupplyData(int _sender_id, String _kind, byte[] _contents)
         {
@@ -113,6 +114,7 @@ public class DataManager
             this.m_is_sent = new boolean[ParamsProvider.getMaxClientNum()];
             this.m_contents = new ArrayList<Byte>();
             for (int i = 0; i < _contents.length; i++) { this.m_contents.add((Byte)_contents[i]); }
+            this.m_pushed_time = System.currentTimeMillis();
         }
         public SupplyData(int _sender_id, String _kind, byte[] _contents, String _name)
         {
@@ -127,6 +129,7 @@ public class DataManager
         public boolean isSentTo(int _id) { return this.m_is_sent[_id]; }
         public void sendTo(int _id) { this.m_is_sent[_id] = true;}
         public ArrayList<Byte> getContents() { return this.m_contents; }
+        public long getPushedTime() { return this.m_pushed_time; }
     } // SupplyData
     private ArrayList<SupplyData> al_supply_data_pool;
 
@@ -160,6 +163,15 @@ public class DataManager
         }
         return al_result;
     }
+    public ArrayList<SupplyData> sortUnsentSupplyData(ArrayList<SupplyData>... a_al_unsent_datas) {
+        ArrayList<SupplyData> al_result = new ArrayList<SupplyData>();
+        for (ArrayList<SupplyData> al : a_al_unsent_datas) {
+            al_result.addAll(al);
+        }
+        al_result.sort( (x, y) -> (int)(x.getPushedTime() - y.getPushedTime()) );
+        return al_result;
+    }
+    
 
 
     private DataManager()

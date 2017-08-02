@@ -42,15 +42,32 @@ public class TalkCmd extends AbstractCommand
 
         byte[] divide_token = new byte[8];
         String divide_token_str = "roliroli";
-        for (int i = 0; i < 8; i++) { divide_token[i] = (byte)divide_token_str.toCharArray()[i]; }
+        byte[] divide_token_img = new byte[8];
+        String divide_token_img_str = "liroliro";
+        for (int i = 0; i < 8; i++) {
+            divide_token[i] = (byte)divide_token_str.toCharArray()[i];
+            divide_token_img[i] = (byte)divide_token_img_str.toCharArray()[i];
+        }
+
         AbstractCommand.appendArrayToList(divide_token, message);
 
-        ArrayList<DataManager.SupplyData> al_send_contents = this.m_dm.getUnsentDataList(this.m_rp.getId(), "Talk");
+        ArrayList<DataManager.SupplyData> al_send_contents_talk = this.m_dm.getUnsentDataList(this.m_rp.getId(), "Talk");
+        ArrayList<DataManager.SupplyData> al_send_contents_img = this.m_dm.getUnsentDataList(this.m_rp.getId(), "Image");
+        ArrayList<DataManager.SupplyData> al_send_contents = this.m_dm.sortUnsentSupplyData(al_send_contents_talk, al_send_contents_img);
+
         for (DataManager.SupplyData sd : al_send_contents) {
             message.add((Byte)(byte)sd.getSenderId());
             AbstractCommand.appendArrayToList(divide_token, message);
-            message.addAll(sd.getContents());
-            AbstractCommand.appendArrayToList(divide_token, message);
+            if (sd.getDataKind() == "Talk") {
+                message.addAll(sd.getContents());
+                AbstractCommand.appendArrayToList(divide_token, message);
+            } else if (sd.getDataKind() == "Image") {
+                String img_name = sd.getName();
+                byte[] a_b_img_name = new byte[img_name.length()];
+                for (int i = 0; i < img_name.length(); ) { a_b_img_name[i] = (byte)img_name.toCharArray()[i]; }
+                AbstractCommand.appendArrayToList(a_b_img_name, message);
+                AbstractCommand.appendArrayToList(divide_token_img, message);
+            }
         }
 
         byte[] a_message = new byte[message.size()];

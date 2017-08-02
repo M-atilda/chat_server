@@ -30,9 +30,10 @@ public class ImageDumpCmd extends AbstractCommand
                 try {
                     //TODO: use method (too much nesting)
                     while (true) {
-                        if (_contents[file_name_end] == divide_token[0]) {
+                        file_name_end++;
+                        if (_contents[file_name_end] == divide_token[0] && _contents[file_name_end + 7] == divide_token[7]) { // search last byte for efficiency
                             boolean is_end = true;
-                            for (int j = 1; j < 8; j++) {
+                            for (int j = 1; j < 7; j++) {
                                 if (_contents[file_name_end + j] != divide_token[j]) {
                                     is_end = false;
                                     break;
@@ -40,7 +41,6 @@ public class ImageDumpCmd extends AbstractCommand
                             }
                             if (is_end) { break; }
                         }
-                        file_name_end++;
                     }
                 } catch (Exception e) { // maybe out of index exception occured
                     DataManager.logging("[Error]failed to get filename from the receive packet contents(ImageDumpCmd:ImageDumpCmd.java)");
@@ -53,7 +53,7 @@ public class ImageDumpCmd extends AbstractCommand
                 this.m_dm.pushSupplyData(this.m_rp.getId(), "Image", this.m_rp.getContents(), image_name);
                 System.out.println("[Debug]store image\n");            
             }
-            is_success_to_preserve = true;
+            this.is_success_to_preserve = true;
         } catch (Exception e) {
             DataManager.logging("[Error]failed to preserve an image data(ImageCmd:ImageCmd.java)");
         }
