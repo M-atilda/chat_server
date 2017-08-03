@@ -230,15 +230,15 @@ public class DataManager
         this.a_last_login_time[rp.getId()] = System.currentTimeMillis();
     }
 
-    private void saveImage(String _name, byte[] _contents) throws Exception
+    private static void saveImage(String _name, byte[] _contents) throws Exception
     {
         try {
             FileOutputStream os = new FileOutputStream("image/" + _name);
             os.write(_contents, 0, _contents.length);
             os.flush();
             os.close();
-            DataManager.logging("[Debug]**************** image length +++++++++++++++++" + Integer.toString(_contents.length));
-            DataManager.logging("[Info]save image " + _name);
+            DataManager.logging("[Debug]**************** image length +++++++++++++++++" + Integer.toString(_contents.length) + "\n");
+            DataManager.logging("[Info]save image " + _name + "\n");
         } catch (Exception e) {
             throw e;
         }

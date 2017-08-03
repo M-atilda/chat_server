@@ -538,4 +538,138 @@ java.net.SocketException: Connection reset
 [Info]read an image icon3.jpg[Info]talk 2017-08-04 00:45:57.334[ user:2 | kind:3 | size:9 | processed_by:receive ]
 [Info]read an image icon4.jpg[Info]talk 2017-08-04 00:45:57.369[ user:2 | kind:3 | size:9 | processed_by:receive ]
 [Info]read an image icon5.jpg[Info]talk 2017-08-04 00:45:57.394[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon6.jpg[Info]server waiting on the port [1707]
+[Info]ID2 tries to login with password nakagawa
+[Info]ID2 login
+[Info]talk 2017-08-04 01:57:50.872[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon0.jpg
+[Info]talk 2017-08-04 01:57:51.291[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon1.jpg
+[Info]talk 2017-08-04 01:57:51.332[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon2.jpg
+[Info]talk 2017-08-04 01:57:51.363[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon3.jpg
+[Info]talk 2017-08-04 01:57:51.486[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon4.jpg
+[Info]talk 2017-08-04 01:57:51.519[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon5.jpg
+[Info]talk 2017-08-04 01:57:51.545[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon6.jpg
+[Debug]**************** image length +++++++++++++++++1905
+[Info]save image icon2.jpg
+[Info]ID2 tries to login with password nakagawa
+[Info]ID2 login
+[Info]talk 2017-08-04 02:00:08.552[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon0.jpg
+[Info]talk 2017-08-04 02:00:08.811[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon1.jpg
+[Info]talk 2017-08-04 02:00:08.845[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon2.jpg
+[Info]talk 2017-08-04 02:00:08.885[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon3.jpg
+[Info]talk 2017-08-04 02:00:08.914[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon4.jpg
+[Info]talk 2017-08-04 02:00:08.950[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon5.jpg
+[Info]talk 2017-08-04 02:00:08.979[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon6.jpg
+[Info]ID4 tries to login with password __hirano
+[Info]ID4 login
+[Info]talk 2017-08-04 02:00:29.268[ user:4 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon0.jpg
+[Info]talk 2017-08-04 02:00:29.418[ user:4 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon1.jpg
+[Info]talk 2017-08-04 02:00:29.442[ user:4 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon2.jpg
+[Info]talk 2017-08-04 02:00:29.469[ user:4 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon3.jpg
+[Info]talk 2017-08-04 02:00:29.497[ user:4 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon4.jpg
+[Info]talk 2017-08-04 02:00:29.522[ user:4 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon5.jpg
+[Info]talk 2017-08-04 02:00:29.548[ user:4 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon6.jpg
+[Info]ID4 tries to login with password __hirano
+[Info]ID4 login
+[Info]talk 2017-08-04 02:02:56.007[ user:4 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon0.jpg
+[Info]talk 2017-08-04 02:02:56.143[ user:4 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon1.jpg
+[Info]talk 2017-08-04 02:02:56.187[ user:4 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon2.jpg
+[Info]talk 2017-08-04 02:02:56.225[ user:4 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon3.jpg
+[Info]talk 2017-08-04 02:02:56.271[ user:4 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon4.jpg
+[Info]talk 2017-08-04 02:02:56.316[ user:4 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon5.jpg
+[Info]talk 2017-08-04 02:02:56.337[ user:4 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon6.jpg
+[Info]ID2 tries to login with password nakagawa
+[Info]ID2 login
+[Info]talk 2017-08-04 02:03:07.769[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon0.jpg
+[Info]talk 2017-08-04 02:03:08.032[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon1.jpg
+[Info]talk 2017-08-04 02:03:08.066[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon2.jpg
+[Info]talk 2017-08-04 02:03:08.106[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon3.jpg
+[Info]talk 2017-08-04 02:03:08.142[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon4.jpg
+[Info]talk 2017-08-04 02:03:08.171[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon5.jpg
+[Info]talk 2017-08-04 02:03:08.201[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon6.jpg
+[Debug]**************** image length +++++++++++++++++6521
+[Info]save image icon2.jpg
+[Info]ID2 tries to login with password nakagawa
+[Info]ID2 login
+[Info]talk 2017-08-04 02:03:39.568[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon0.jpg
+[Info]talk 2017-08-04 02:03:39.835[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon1.jpg
+[Info]talk 2017-08-04 02:03:39.867[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon2.jpg
+[Info]talk 2017-08-04 02:03:39.938[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon3.jpg
+[Info]talk 2017-08-04 02:03:39.969[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon4.jpg
+[Info]talk 2017-08-04 02:03:40.005[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon5.jpg
+[Info]talk 2017-08-04 02:03:40.034[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon6.jpg
+[Info]ID2 tries to login with password nakagawa
+[Info]ID2 login
+[Info]talk 2017-08-04 02:04:01.020[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon0.jpg
+[Info]talk 2017-08-04 02:04:01.303[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon1.jpg
+[Info]talk 2017-08-04 02:04:01.337[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon2.jpg
+[Info]talk 2017-08-04 02:04:01.396[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon3.jpg
+[Info]talk 2017-08-04 02:04:01.427[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon4.jpg
+[Info]talk 2017-08-04 02:04:01.459[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon5.jpg
+[Info]talk 2017-08-04 02:04:01.484[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon6.jpg
+[Debug]**************** image length +++++++++++++++++1905
+[Info]save image icon2.jpg
+[Info]ID2 tries to login with password nakagawa
+[Info]ID2 login
+[Info]talk 2017-08-04 02:04:28.426[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon0.jpg
+[Info]talk 2017-08-04 02:04:28.707[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon1.jpg
+[Info]talk 2017-08-04 02:04:28.741[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon2.jpg
+[Info]talk 2017-08-04 02:04:28.772[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon3.jpg
+[Info]talk 2017-08-04 02:04:28.808[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon4.jpg
+[Info]talk 2017-08-04 02:04:28.843[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon5.jpg
+[Info]talk 2017-08-04 02:04:28.871[ user:2 | kind:3 | size:9 | processed_by:receive ]
 [Info]read an image icon6.jpg
