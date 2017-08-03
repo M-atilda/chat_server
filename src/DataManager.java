@@ -226,7 +226,7 @@ public class DataManager
     {
         this.al_receive_packet.add(rp);
         this.al_send_packet.add(sp);
-        this.a_login_member[rp.getId()] = true;
+        if (rp.getKind() != 255) { this.a_login_member[rp.getId()] = true; }
         this.a_last_login_time[rp.getId()] = System.currentTimeMillis();
     }
 

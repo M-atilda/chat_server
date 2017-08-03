@@ -10,9 +10,9 @@ class ParamsProvider {
     static int getPortNum() { return 1707; }
     static int getMaxThreadNum() { return 20; }
     static int getMaxClientNum() { return 7; }
-    static int getRoutinePeriod() { return 30000; }
+    static int getRoutinePeriod() { return 10000; }
     static int getDiscardPerRoutine() { return 20; }
-    static long getTimeOutPeriod() { return 30000; } // 10 sec
+    static long getTimeOutPeriod() { return 10000; } // 10 sec
     static long getDiscardOldDataPeriod() { return 10000000; } // about 3h
     static int getMaxStorageSupplyData() { return 1000; }
     static String getLogFileName() { return "Lolita_log.txt"; }
