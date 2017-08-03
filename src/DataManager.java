@@ -168,6 +168,14 @@ public class DataManager
         al_result.sort( (x, y) -> (int)(x.getPushedTime() - y.getPushedTime()) );
         return al_result;
     }
+
+    public void pushServerTalkData(String message) throws Exception {
+        byte[] a_b_message = new byte[message.length()];
+        for (int i = 0; i < message.length(); i++) {
+            a_b_message[i] = (byte)message.toCharArray()[i];
+        }
+        this.pushSupplyData(-1, "Talk", a_b_message);
+    }
     
 
 
@@ -237,7 +245,6 @@ public class DataManager
             os.write(_contents, 0, _contents.length);
             os.flush();
             os.close();
-            DataManager.logging("[Debug]**************** image length +++++++++++++++++" + Integer.toString(_contents.length) + "\n");
             DataManager.logging("[Info]save image " + _name + "\n");
         } catch (Exception e) {
             throw e;

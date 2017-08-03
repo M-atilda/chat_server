@@ -19,7 +19,7 @@ public class ImageDumpCmd extends AbstractCommand
         try {
             if (is_icon) {
                 this.m_dm.pushSupplyData(this.m_rp.getId(), "Icon", this.m_rp.getContents());
-                System.out.println("[Debug]store icon of ID" + this.m_rp.getId() + "\n");
+                this.m_dm.pushServerTalkData("[info] ID" + Integer.toString(this.m_rp.getId()) + " changed the icon");
             } else {
                 // get the image name and its contents
                 byte[] divide_token = new byte[8];
