@@ -80,4 +80,4 @@
 [Info]ID2 tries to login with password nakagawa
 [Info]ID2 login
 [Info]talk 2017-08-01 02:31:18.263[ user:2 | kind:3 | size:9 | processed_by:receive ]
-[Info]read an image icon0.jpg[Info]save image icon2.jpg
+[Info]read an image icon0.jpg[Info]save image icon2.jpg[Info]server waiting on the port [1707]

@@ -39,8 +39,7 @@ public class DataManager
                 } catch (InterruptedException ie) {
                     DataManager.logging("[Error]error occured in routine process(TimeActionControler.run:DataManager.java)");
                 }
-                
-                
+
                 //routine process
                 long current_time = System.currentTimeMillis();
                 for (int i = 0; i < ParamsProvider.getMaxClientNum(); i++) {
@@ -131,7 +130,7 @@ public class DataManager
         public ArrayList<Byte> getContents() { return this.m_contents; }
         public long getPushedTime() { return this.m_pushed_time; }
     } // SupplyData
-    private ArrayList<SupplyData> al_supply_data_pool;
+    private static ArrayList<SupplyData> al_supply_data_pool;
 
     public void pushSupplyData(int _id, String _kind, byte[] _contents, String... _name) throws Exception
     {
@@ -194,8 +193,12 @@ public class DataManager
             ois.close();
         } catch (Exception e) {
             System.out.println(e.toString());
-            al_supply_data_pool = new ArrayList<SupplyData>();
         }
+
+        //add the data dump action executed at the server down
+        Runtime.getRuntime().addShutdownHook(new Thread() {
+                public void run() { DataManager.dump(); }
+            });
     }
     // NOTE: singleton
     public static DataManager dmFactory()
@@ -300,7 +303,7 @@ public class DataManager
 
 
     // NOTE: dump when the surver dies
-    public void dump(String dump_file_name)
+    private static void dump()
     {
         try {
             ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(ParamsProvider.getDumpFileName()));
