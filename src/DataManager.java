@@ -237,6 +237,7 @@ public class DataManager
             os.write(_contents, 0, _contents.length);
             os.flush();
             os.close();
+            DataManager.logging("[Debug]**************** image length +++++++++++++++++" + Integer.toString(_contents.length));
             DataManager.logging("[Info]save image " + _name);
         } catch (Exception e) {
             throw e;
@@ -255,7 +256,7 @@ public class DataManager
                 file_length = fis.read(temp_buffer);
                 for (int i = 0; i < file_length; i++) { al_buffer.add((Byte)temp_buffer[i]); }
             } while (file_length == temp_buffer.length);
-            DataManager.logging("[Info]read an image " + _name);
+            DataManager.logging("[Info]read an image " + _name + "\n");
         } catch (IOException e) {
             DataManager.logging("[Error]failed to read image file <image/" + _name + ">(getImageByBytes:DataManager.java\n)");
             DataManager.logging(e.toString() + "\n");
