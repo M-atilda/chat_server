@@ -101,7 +101,7 @@ public class DataManager
         private int m_sender_id;
         private String m_name = "";
         private String m_data_kind;
-        private boolean[] m_is_sent;
+        private volatile boolean[] m_is_sent;
         private ArrayList<Byte> m_contents;
         private long m_pushed_time;
 

@@ -673,3 +673,4 @@ java.net.SocketException: Connection reset
 [Info]read an image icon5.jpg
 [Info]talk 2017-08-04 02:04:28.871[ user:2 | kind:3 | size:9 | processed_by:receive ]
 [Info]read an image icon6.jpg
+[Info]server waiting on the port [1707]
