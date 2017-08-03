@@ -74,7 +74,6 @@ public class DataManager
     private TimeActionControler ta_controler = new TimeActionControler();
 
 
-    // TODO: access level
     private boolean[] a_login_member;
     private long[] a_last_login_time;
 
@@ -130,7 +129,7 @@ public class DataManager
         public ArrayList<Byte> getContents() { return this.m_contents; }
         public long getPushedTime() { return this.m_pushed_time; }
     } // SupplyData
-    private static ArrayList<SupplyData> al_supply_data_pool;
+    private static ArrayList<SupplyData> al_supply_data_pool = new ArrayList<SupplyData>();
 
     public void pushSupplyData(int _id, String _kind, byte[] _contents, String... _name) throws Exception
     {
@@ -158,7 +157,6 @@ public class DataManager
                 al_result.add(sd);
                 sd.sendTo(_id);
             }
-            //TODO: get the information about image, icon and so on
         }
         return al_result;
     }
@@ -186,19 +184,23 @@ public class DataManager
             log_file = new File(ParamsProvider.getLogFileName());
             fw = new FileWriter(DataManager.log_file, true); } catch(Exception e) { System.out.println("[Error]Can't open logging file(DataManager:DataManager.java)\n");
         }
-        // TODO: load the dumped data at the initialization
+        
         try {
+            /*
             ObjectInputStream ois = new ObjectInputStream(new FileInputStream(ParamsProvider.getDumpFileName()));
             al_supply_data_pool = (ArrayList<SupplyData>)ois.readObject();
             ois.close();
+            */
         } catch (Exception e) {
             System.out.println(e.toString());
         }
 
         //add the data dump action executed at the server down
+        /*
         Runtime.getRuntime().addShutdownHook(new Thread() {
                 public void run() { DataManager.dump(); }
             });
+        */
     }
     // NOTE: singleton
     public static DataManager dmFactory()
@@ -296,9 +298,10 @@ public class DataManager
     public static void logging_talk(Packet rp)
     {
         DataManager.logging(rp);
-        // TODO: impl
-        //String message; // convert contents to String data
-        //this.logging(message);
+        try {
+            String message = "[Info]ID" + Integer.toString(rp.getId()) + " says <<" + new String(rp.getContents(), "UTF-8") + ">>"; // convert contents to String data
+            DataManager.logging(message);
+        } catch (Exception e) {}
     }
 
 

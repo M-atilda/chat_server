@@ -16,7 +16,7 @@ public class CommandManager
                 result = new LoginCmd(rp, dm);
                 break;
             case 1:
-                System.out.println("[Debug]TalkCmd generated (commandFactory:CommandManager.java)");
+                //System.out.println("[Debug]TalkCmd generated (commandFactory:CommandManager.java)");
                 result = new TalkCmd(rp, dm);
                 break;
             case 5:

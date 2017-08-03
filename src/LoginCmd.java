@@ -134,7 +134,7 @@ public class LoginCmd extends AbstractCommand
             System.out.println(e);
             DataManager.logging("[Error]failed to open password file(registerdPasswordCheck:LoginCmd.java)\n");
         }
-        DataManager.logging("[Warn]ID" + this.m_rp.getId() + " failed to loing for invalid password\n");
+        DataManager.logging("[Warn]ID" + this.m_rp.getId() + " failed to login for invalid password\n");
         return false;
     }
 } // LoginCmd

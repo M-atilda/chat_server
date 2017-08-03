@@ -81,3 +81,171 @@
 [Info]ID2 login
 [Info]talk 2017-08-01 02:31:18.263[ user:2 | kind:3 | size:9 | processed_by:receive ]
 [Info]read an image icon0.jpg[Info]save image icon2.jpg[Info]server waiting on the port [1707]
+[Info]server waiting on the port [1707]
+[Info]ID2 tries to login with password nakagawa
+[Info]ID2 login
+[Info]server waiting on the port [1707]
+[Info]ID2 tries to login with password nakagawa
+[Info]ID2 login
+[Info]server waiting on the port [1707]
+[Info]ID2 tries to login with password nakagawa
+[Info]ID2 login
+[Error]error occured in Worker thread(run:Worker.java)
+java.net.SocketException: Connection reset
+[Info]server waiting on the port [1707]
+[Info]ID2 tries to login with password nakagawa
+[Info]ID2 login
+[Error]error occured in Worker thread(run:Worker.java)
+java.net.SocketException: Connection reset
+[Info]server waiting on the port [1707]
+[Info]ID2 tries to login with password nakagawa
+[Info]ID2 login
+[Info]server waiting on the port [1707]
+[Info]ID2 tries to login with password nakagawa
+[Info]ID2 login
+[Info]server waiting on the port [1707]
+[Info]ID2 tries to login with password nakagawa
+[Info]ID2 login
+[Info]talk 2017-08-03 18:15:10.077[ user:2 | kind:1 | size:2 | processed_by:receive ]
+[Info]ID2 says <<hi>>[Info]talk 2017-08-03 18:16:09.993[ user:2 | kind:1 | size:2 | processed_by:receive ]
+[Info]ID2 says <<hi>>[Info]server waiting on the port [1707]
+[Info]ID2 tries to login with password nakagawa
+[Info]ID2 login
+[Info]talk 2017-08-03 18:19:20.153[ user:2 | kind:1 | size:5 | processed_by:receive ]
+[Info]ID2 says <<hello>>[Info]server waiting on the port [1707]
+[Info]ID2 tries to login with password nakagawa
+[Info]ID2 login
+[Info]talk 2017-08-03 18:22:16.092[ user:2 | kind:1 | size:5 | processed_by:receive ]
+[Info]ID2 says <<hello>>[Info]server waiting on the port [1707]
+[Info]ID2 tries to login with password nakagawa
+[Info]ID2 login
+[Info]talk 2017-08-03 18:30:36.835[ user:2 | kind:1 | size:5 | processed_by:receive ]
+[Info]ID2 says <<hello>>[Info]server waiting on the port [1707]
+[Info]ID2 tries to login with password nakagawa
+[Info]ID2 login
+[Info]talk 2017-08-03 18:42:45.861[ user:2 | kind:1 | size:5 | processed_by:receive ]
+[Info]ID2 says <<hello>>[Info]server waiting on the port [1707]
+[Info]ID2 tries to login with password nakagawa
+[Info]ID2 login
+[Info]talk 2017-08-03 18:46:34.590[ user:2 | kind:1 | size:5 | processed_by:receive ]
+[Info]ID2 says <<hello>>[Info]server waiting on the port [1707]
+[Info]ID2 tries to login with password nakagawa
+[Info]ID2 login
+[Info]talk 2017-08-03 18:53:55.218[ user:2 | kind:1 | size:5 | processed_by:receive ]
+[Info]ID2 says <<hello>>[Info]server waiting on the port [1707]
+[Info]ID2 tries to login with password nakagawa
+[Info]ID2 login
+[Info]talk 2017-08-03 18:57:35.300[ user:2 | kind:1 | size:5 | processed_by:receive ]
+[Info]ID2 says <<hello>>[Info]server waiting on the port [1707]
+[Info]ID2 tries to login with password nakagawa
+[Info]ID2 login
+[Info]talk 2017-08-03 19:08:05.325[ user:2 | kind:1 | size:5 | processed_by:receive ]
+[Info]ID2 says <<hello>>[Info]server waiting on the port [1707]
+[Info]server waiting on the port [1707]
+[Info]ID2 tries to login with password nakgawa
+[Warn]ID2 failed to loing for invalid password
+[Info]ID2 tries to login with password nakagawa
+[Info]ID2 login
+[Info]talk 2017-08-03 19:10:25.450[ user:2 | kind:1 | size:5 | processed_by:receive ]
+[Info]ID2 says <<hello>>[Info]server waiting on the port [1707]
+[Info]ID2 tries to login with password nakagawa
+[Info]ID2 login
+[Info]talk 2017-08-03 19:13:56.973[ user:2 | kind:1 | size:5 | processed_by:receive ]
+[Info]ID2 says <<hello>>[Info]server waiting on the port [1707]
+[Info]ID2 tries to login with password nakagawa
+[Info]ID2 login
+[Info]talk 2017-08-03 19:16:02.906[ user:2 | kind:1 | size:5 | processed_by:receive ]
+[Info]ID2 says <<hello>>[Info]server waiting on the port [1707]
+[Info]ID2 tries to login with password nakagawa
+[Info]ID2 login
+[Info]talk 2017-08-03 19:22:28.111[ user:2 | kind:1 | size:5 | processed_by:receive ]
+[Info]ID2 says <<hello>>[Info]server waiting on the port [1707]
+[Info]ID2 tries to login with password nakagawa
+[Info]ID2 login
+[Info]talk 2017-08-03 19:25:37.498[ user:2 | kind:1 | size:5 | processed_by:receive ]
+[Info]ID2 says <<hello>>[Info]server waiting on the port [1707]
+[Info]ID2 tries to login with password nakagawa
+[Info]ID2 login
+[Info]talk 2017-08-03 19:30:09.238[ user:2 | kind:1 | size:5 | processed_by:receive ]
+[Info]ID2 says <<hello>>[Info]server waiting on the port [1707]
+[Info]ID3 tries to login with password hayakawa
+[Info]ID3 login
+[Info]talk 2017-08-03 19:35:13.381[ user:3 | kind:1 | size:3 | processed_by:receive ]
+[Info]ID3 says <<www>>[Info]talk 2017-08-03 19:35:53.264[ user:3 | kind:1 | size:4 | processed_by:receive ]
+[Info]ID3 says <<croi>>[Info]server waiting on the port [1707]
+[Info]ID3 tries to login with password hayakawa
+[Info]ID3 login
+[Info]ID3 tries to login with password nakagawa
+[Warn]ID3 failed to login for invalid password
+[Info]ID3 tries to login with password hayakawa
+[Info]ID3 login
+[Info]talk 2017-08-03 19:42:43.095[ user:3 | kind:1 | size:3 | processed_by:receive ]
+[Info]ID3 says <<www>>[Info]talk 2017-08-03 19:43:03.908[ user:3 | kind:1 | size:1 | processed_by:receive ]
+[Info]ID3 says <<r>>[Info]ID2 tries to login with password nakagawa
+[Info]ID2 login
+[Info]talk 2017-08-03 19:46:38.988[ user:2 | kind:1 | size:1 | processed_by:receive ]
+[Info]ID2 says <<?>>[Info]ID2 tries to login with password nakagawa
+[Info]ID2 login
+[Info]ID2 tries to login with password nakagawa
+[Info]ID2 login
+[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Info]save image icon2.jpg[Error]faied to send response[Error]faied to send response[Info]server waiting on the port [1707]
+[Info]ID2 tries to login with password nakagawa
+[Info]ID2 login
+[Info]save image icon2.jpg[Info]server waiting on the port [1707]
+[Info]ID2 tries to login with password nakagawa
+[Info]ID2 login
+[Info]save image icon2.jpg[Info]ID3 tries to login with password hayakawa
+[Info]ID3 login
+[Info]save image icon3.jpg[Info]save image icon3.jpg[Info]save image icon3.jpg[Info]save image icon3.jpg[Info]save image icon3.jpg[Info]server waiting on the port [1707]
+[Info]ID2 tries to login with password nakagawa
+[Info]ID2 login
+[Info]server waiting on the port [1707]
+[Info]ID2 tries to login with password nakagawa
+[Info]ID2 login
+[Info]talk 2017-08-03 20:29:28.787[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon0.jpg[Info]talk 2017-08-03 20:29:29.265[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon1.jpg[Info]talk 2017-08-03 20:29:29.310[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon2.jpg[Info]talk 2017-08-03 20:29:29.364[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon3.jpg[Info]talk 2017-08-03 20:29:29.404[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon4.jpg[Info]talk 2017-08-03 20:29:29.450[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon5.jpg[Info]talk 2017-08-03 20:29:29.488[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon6.jpg[Info]ID2 tries to login with password nakagawa
+[Info]ID2 login
+[Info]talk 2017-08-03 20:31:11.876[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon0.jpg[Info]talk 2017-08-03 20:31:12.123[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon1.jpg[Info]talk 2017-08-03 20:31:12.154[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon2.jpg[Info]talk 2017-08-03 20:31:12.185[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon3.jpg[Info]talk 2017-08-03 20:31:12.236[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon4.jpg[Info]talk 2017-08-03 20:31:12.264[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon5.jpg[Info]talk 2017-08-03 20:31:12.302[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon6.jpg[Info]server waiting on the port [1707]
+[Info]ID2 tries to login with password nakagawa
+[Info]ID2 login
+[Info]talk 2017-08-03 20:41:43.149[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon0.jpg[Info]talk 2017-08-03 20:41:43.581[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon1.jpg[Info]talk 2017-08-03 20:41:43.615[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon2.jpg[Info]talk 2017-08-03 20:41:43.649[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon3.jpg[Info]talk 2017-08-03 20:41:43.680[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon4.jpg[Info]talk 2017-08-03 20:41:44.095[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon5.jpg[Info]talk 2017-08-03 20:41:44.126[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon6.jpg[Info]ID3 tries to login with password hayakawa
+[Info]ID3 login
+[Info]talk 2017-08-03 20:42:32.753[ user:3 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon0.jpg[Info]talk 2017-08-03 20:42:33.021[ user:3 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon1.jpg[Info]talk 2017-08-03 20:42:33.052[ user:3 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon2.jpg[Info]talk 2017-08-03 20:42:33.085[ user:3 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon3.jpg[Info]talk 2017-08-03 20:42:33.115[ user:3 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon4.jpg[Info]talk 2017-08-03 20:42:33.150[ user:3 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon5.jpg[Info]talk 2017-08-03 20:42:33.177[ user:3 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon6.jpg[Info]talk 2017-08-03 20:42:39.127[ user:3 | kind:1 | size:3 | processed_by:receive ]
+[Info]ID3 says <<www>>[Info]ID2 tries to login with password nakagawa
+[Info]ID2 login
+[Info]talk 2017-08-03 20:42:57.888[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon0.jpg[Info]talk 2017-08-03 20:42:58.129[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon1.jpg[Info]talk 2017-08-03 20:42:58.162[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon2.jpg[Info]talk 2017-08-03 20:42:58.189[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon3.jpg[Info]talk 2017-08-03 20:42:58.222[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon4.jpg[Info]talk 2017-08-03 20:42:58.269[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon5.jpg[Info]talk 2017-08-03 20:42:58.297[ user:2 | kind:3 | size:9 | processed_by:receive ]
+[Info]read an image icon6.jpg[Info]talk 2017-08-03 20:43:12.168[ user:2 | kind:1 | size:3 | processed_by:receive ]
+[Info]ID2 says <<www>>

@@ -30,7 +30,6 @@ public class TalkCmd extends AbstractCommand
     @Override
     protected void make_contents()
     {
-        System.out.println("[Debug]make talk response contents(make_contents:TalkCmd.java)");
         ArrayList<Byte> message = new ArrayList<Byte>();
         for (boolean b : this.m_dm.getLoginMember()) {
             if (b) {
@@ -55,8 +54,9 @@ public class TalkCmd extends AbstractCommand
         ArrayList<DataManager.SupplyData> al_send_contents_img = this.m_dm.getUnsentDataList(this.m_rp.getId(), "Image");
         ArrayList<DataManager.SupplyData> al_send_contents = this.m_dm.sortUnsentSupplyData(al_send_contents_talk, al_send_contents_img);
 
+
         for (DataManager.SupplyData sd : al_send_contents) {
-            message.add((Byte)(byte)sd.getSenderId());
+            message.add((Byte)(byte)Integer.toString(sd.getSenderId()).toCharArray()[0]);
             AbstractCommand.appendArrayToList(divide_token, message);
             if (sd.getDataKind() == "Talk") {
                 message.addAll(sd.getContents());
@@ -71,7 +71,7 @@ public class TalkCmd extends AbstractCommand
         }
 
         byte[] a_message = new byte[message.size()];
-        for (int i = 0; i < a_message.length; i++) { a_message[i] = message.get(i); }
+        for (int i = 0; i < a_message.length; i++) { a_message[i] = (byte)message.get(i); }
         this.m_sp.setContents(a_message);
     }
 } // TalkCmd
