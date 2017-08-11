@@ -30,7 +30,7 @@ public class ImageReadCmd extends AbstractCommand
     @Override
     protected void make_contents()
     {
-        System.out.println("[Debug]make image_read response contents(make_contents:ImageCmd.java)");
+        //System.out.println("[Debug]make image_read response contents(make_contents:ImageCmd.java)");
         try {
             String image_name = new String(this.m_rp.getContents(), "UTF-8");
             byte[] result = this.m_dm.getImageByBytes(image_name);

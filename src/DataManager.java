@@ -4,6 +4,7 @@
 package src;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.FileInputStream;
@@ -56,6 +57,7 @@ public class DataManager
                 }
 
 
+                /*
                 for (int j = 0; j < al_receive_packet.size(); j++) {
                     if (current_time - al_receive_packet.get(j).getProcessedTime() > ParamsProvider.getDiscardOldDataPeriod()) {
                         al_receive_packet.remove(j);
@@ -68,6 +70,7 @@ public class DataManager
                         j--;
                     }
                 }
+                */
             }
         }
     } // TimeActioncontroler
@@ -236,6 +239,9 @@ public class DataManager
         this.al_send_packet.add(sp);
         if (rp.getKind() != 255) { this.a_login_member[rp.getId()] = true; }
         this.a_last_login_time[rp.getId()] = System.currentTimeMillis();
+
+        if (al_receive_packet.size() > ParamsProvider.getMaxStorageSupplyData()) { al_receive_packet.remove(0); }
+        if (al_send_packet.size() > ParamsProvider.getMaxStorageSupplyData()) { al_send_packet.remove(0); }
     }
 
     private static void saveImage(String _name, byte[] _contents) throws Exception
@@ -251,26 +257,37 @@ public class DataManager
         }
     }
 
+    private HashMap<String, byte[]> hm_img_cache = new HashMap<String, byte[]>();
     public byte[] getImageByBytes(String _name)
     {
-        ArrayList<Byte> al_buffer = new ArrayList<Byte>();
-        byte[] temp_buffer = new byte[1024];
-        try {
-            File f = new File("image/" + _name);
-            FileInputStream fis = new FileInputStream(f);
-            int file_length;
-            do {
-                file_length = fis.read(temp_buffer);
-                for (int i = 0; i < file_length; i++) { al_buffer.add((Byte)temp_buffer[i]); }
-            } while (file_length == temp_buffer.length);
-            DataManager.logging("[Info]read an image " + _name + "\n");
-        } catch (IOException e) {
-            DataManager.logging("[Error]failed to read image file <image/" + _name + ">(getImageByBytes:DataManager.java\n)");
-            DataManager.logging(e.toString() + "\n");
+        byte[] result = new byte[0]; // set default contents for compile
+
+        if (hm_img_cache.containsKey(_name)) {
+            result = hm_img_cache.get(_name);
+        } else {
+            byte[] temp_buffer = new byte[1024];
+            try {
+                File f = new File("image/" + _name);
+                FileInputStream fis = new FileInputStream(f);
+                int file_length;
+                ArrayList<Byte> al_buffer = new ArrayList<Byte>();
+
+                do {
+                    file_length = fis.read(temp_buffer);
+                    for (int i = 0; i < file_length; i++) { al_buffer.add((Byte)temp_buffer[i]); }
+                } while (file_length == temp_buffer.length);
+
+                result = new byte[al_buffer.size()];
+                for (int i = 0; i < result.length; i++) { result[i] = al_buffer.get(i); }
+
+                hm_img_cache.put(_name, result);
+                DataManager.logging("[Info]read an image " + _name + "\n");
+            } catch (IOException e) {
+                DataManager.logging("[Error]failed to read image file <image/" + _name + ">(getImageByBytes:DataManager.java\n)");
+                DataManager.logging(e.toString() + "\n");
+            }
         }
 
-        byte[] result = new byte[al_buffer.size()];
-        for (int i = 0; i < result.length; i++) { result[i] = al_buffer.get(i); }
         return result;
     }
 

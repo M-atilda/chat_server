@@ -71,7 +71,7 @@ public class ImageDumpCmd extends AbstractCommand
     @Override
     protected void make_contents()
     {
-        System.out.println("[Debug]make image_dump response contents(make_contents:ImageDumpCmd.java)");
+        //System.out.println("[Debug]make image_dump response contents(make_contents:ImageDumpCmd.java)");
         byte[] result = new byte[1];
         if (this.is_success_to_preserve) {
             result[0] = (byte)'T';

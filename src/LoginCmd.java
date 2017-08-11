@@ -122,7 +122,7 @@ public class LoginCmd extends AbstractCommand
                 if (Integer.parseInt(s.substring(0, 1)) == _id) {
                     String registerd_pass = s.substring(2);
                     if (target_pass.equals(registerd_pass)) {
-                        System.out.println("[Debug]ID" + this.m_rp.getId() + " login\n");
+                        //System.out.println("[Debug]ID" + this.m_rp.getId() + " login\n");
                         DataManager.logging("[Info]ID" + this.m_rp.getId() + " login\n");
                         return true;
                     } else { break; }
