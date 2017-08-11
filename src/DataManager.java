@@ -244,6 +244,7 @@ public class DataManager
         if (al_send_packet.size() > ParamsProvider.getMaxStorageSupplyData()) { al_send_packet.remove(0); }
     }
 
+    static private HashMap<String, byte[]> hm_img_cache = new HashMap<String, byte[]>();
     private static void saveImage(String _name, byte[] _contents) throws Exception
     {
         try {
@@ -251,13 +252,13 @@ public class DataManager
             os.write(_contents, 0, _contents.length);
             os.flush();
             os.close();
+            hm_img_cache.put(_name, _contents);
             DataManager.logging("[Info]save image " + _name + "\n");
         } catch (Exception e) {
             throw e;
         }
     }
 
-    private HashMap<String, byte[]> hm_img_cache = new HashMap<String, byte[]>();
     public byte[] getImageByBytes(String _name)
     {
         byte[] result = new byte[0]; // set default contents for compile
